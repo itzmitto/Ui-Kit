@@ -55,18 +55,18 @@ export const starterKits: StarterKit[] = [
       },
       // TODO: Maak hier jouw tweede button. Kopieer het object hierboven.
 
-{
-  // Unieke naam voor je button.
-  id: "my-custom-button",
+      {
+        // Unieke naam voor je button.
+        id: "my-custom-button",
 
-  // Naam op de website.
-  title: "My Custom Button",
+        // Naam op de website.
+        title: "My Custom Button",
 
-  // Korte beschrijving.
-  description: "My first custom Tailwind button.",
+        // Korte beschrijving.
+        description: "My first custom Tailwind button.",
 
-  // Hier schrijf je zelf HTML en Tailwind CSS.
-  html: `
+        // Hier schrijf je zelf HTML en Tailwind CSS.
+        html: `
     <button
       type="button"
       class="rounded-2xl bg-red-500 px-8 py-4
@@ -77,8 +77,285 @@ export const starterKits: StarterKit[] = [
       My first button
     </button>
   `,
-},
+      }, // ==========================================
+      // 01 - CREATE ACCOUNT (DEFAULT)
+      // ==========================================
+      {
+        id: "gradient-create-default",
+        title: "Create Account - Default",
+        description: "Glossy blue to purple gradient button.",
+        html: `
+<button type="button"
+  class="group relative isolate inline-flex min-w-[245px] items-center
+         justify-center rounded-full p-[2px] text-white
+         transition-transform duration-300 hover:-translate-y-0.5
+         active:scale-95 focus-visible:outline-2
+         focus-visible:outline-offset-4 focus-visible:outline-blue-500">
 
+  <!-- Neon schaduw -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute -inset-1 -z-10 rounded-full
+           bg-linear-to-r from-cyan-400 via-blue-500 to-fuchsia-500
+           opacity-50 blur-lg transition-opacity duration-300
+           group-hover:opacity-80"></span>
+
+  <!-- Buitenrand -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-0 rounded-full
+           bg-linear-to-r from-cyan-300 via-blue-500 to-fuchsia-400"></span>
+
+  <!-- Binnenste gradient -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-[2px] rounded-full
+           bg-linear-to-r from-[#02c9f5] via-[#1364fa] to-[#aa28eb]"></span>
+
+  <!-- Glossy effect -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-x-4 top-[3px] h-[42%]
+           rounded-full bg-linear-to-b from-white/35 to-transparent"></span>
+
+  <span class="relative z-10 flex items-center gap-4 px-7 py-3.5
+               text-[17px] font-bold">
+    Create Account <span aria-hidden="true">→</span>
+  </span>
+</button>
+    `,
+      },
+
+      // ==========================================
+      // 02 - CREATE ACCOUNT (HOVER DESIGN)
+      // ==========================================
+      {
+        id: "gradient-create-hover",
+        title: "Create Account - Hover",
+        description: "Vibrant cyan, purple and pink gradient.",
+        html: `
+<button type="button"
+  class="group relative isolate inline-flex min-w-[245px] items-center
+         justify-center rounded-full p-[2px] text-white
+         transition-transform duration-300 hover:scale-105
+         active:scale-95 focus-visible:outline-2
+         focus-visible:outline-offset-4 focus-visible:outline-pink-500">
+
+  <!-- Sterkere roze glow -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute -inset-2 -z-10 rounded-full
+           bg-linear-to-r from-cyan-400 via-fuchsia-500 to-pink-500
+           opacity-75 blur-xl transition-opacity duration-300
+           group-hover:opacity-100"></span>
+
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-0 rounded-full
+           bg-linear-to-r from-cyan-200 via-fuchsia-300 to-pink-200"></span>
+
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-[2px] rounded-full
+           bg-linear-to-r from-[#00cfff] via-[#303eff]
+           via-45% to-[#ff39ac]"></span>
+
+  <!-- Glanzende bovenkant -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-x-4 top-[3px] h-[42%]
+           rounded-full bg-linear-to-b from-white/40 to-transparent"></span>
+
+  <span class="relative z-10 flex items-center gap-4 px-7 py-3.5
+               text-[17px] font-bold">
+    Create Account <span aria-hidden="true">→</span>
+  </span>
+</button>
+    `,
+      },
+
+      // ==========================================
+      // 03 - JOIN NOW (DEFAULT)
+      // ==========================================
+      {
+        id: "gradient-join-default",
+        title: "Join Now - Default",
+        description: "Dark glossy button with a neon gradient outline.",
+        html: `
+<button type="button"
+  class="group relative isolate inline-flex min-w-[220px] items-center
+         justify-center rounded-full p-[2px] text-white
+         transition-transform duration-300 hover:-translate-y-0.5
+         active:scale-95 focus-visible:outline-2
+         focus-visible:outline-offset-4 focus-visible:outline-cyan-400">
+
+  <!-- Neon buitenrand -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute -inset-1 -z-10 rounded-full
+           bg-linear-to-r from-cyan-400 via-blue-600 to-fuchsia-500
+           opacity-60 blur-lg transition-opacity duration-300
+           group-hover:opacity-90"></span>
+
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-0 rounded-full
+           bg-linear-to-r from-[#00ddff] via-[#3156ff] to-[#db49ff]"></span>
+
+  <!-- Donkere achtergrond -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-[2px] rounded-full
+           bg-linear-to-r from-[#050b1b] via-[#151127] to-[#070b18]"></span>
+
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-x-4 top-[3px] h-[45%]
+           rounded-full bg-linear-to-b from-white/20 to-transparent"></span>
+
+  <span class="relative z-10 flex items-center gap-4 px-7 py-3
+               text-[17px] font-bold">
+    Join Now <span aria-hidden="true">→</span>
+  </span>
+</button>
+    `,
+      },
+
+      // ==========================================
+      // 04 - JOIN NOW (HOVER DESIGN)
+      // ==========================================
+      {
+        id: "gradient-join-hover",
+        title: "Join Now - Hover",
+        description: "Electric blue and pink neon gradient.",
+        html: `
+<button type="button"
+  class="group relative isolate inline-flex min-w-[220px] items-center
+         justify-center rounded-full p-[2px] text-white
+         transition-transform duration-300 hover:scale-105
+         active:scale-95 focus-visible:outline-2
+         focus-visible:outline-offset-4 focus-visible:outline-pink-500">
+
+  <!-- Felle achtergrondgloed -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute -inset-2 -z-10 rounded-full
+           bg-linear-to-r from-cyan-400 via-violet-600 to-pink-500
+           opacity-80 blur-xl transition-opacity duration-300
+           group-hover:opacity-100"></span>
+
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-0 rounded-full
+           bg-linear-to-r from-cyan-300 via-violet-300 to-pink-200"></span>
+
+  <!-- Volledige neon-gradient -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-[2px] rounded-full
+           bg-linear-to-r from-[#085dff] via-[#6024ff] to-[#ff299d]"></span>
+
+  <!-- Glossy laag -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-x-4 top-[3px] h-[42%]
+           rounded-full bg-linear-to-b from-white/35 to-transparent"></span>
+
+  <span class="relative z-10 flex items-center gap-4 px-7 py-3
+               text-[17px] font-bold">
+    Join Now <span aria-hidden="true">→</span>
+  </span>
+</button>
+    `,
+      },
+
+      // ==========================================
+      // 05 - UPGRADE (DEFAULT)
+      // ==========================================
+      {
+        id: "gradient-upgrade-default",
+        title: "Upgrade - Default",
+        description: "White button with a thin blue gradient border.",
+        html: `
+<button type="button"
+  class="group relative isolate inline-flex min-w-[195px] items-center
+         justify-center rounded-full p-[2px] text-[#0758ee]
+         transition-transform duration-300 hover:-translate-y-0.5
+         active:scale-95 focus-visible:outline-2
+         focus-visible:outline-offset-4 focus-visible:outline-blue-500">
+
+  <span aria-hidden="true"
+    class="pointer-events-none absolute -inset-1 -z-10 rounded-full
+           bg-blue-400/30 opacity-50 blur-lg"></span>
+
+  <!-- Gradient outline -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-0 rounded-full
+           bg-linear-to-r from-[#00d7ff] via-[#1670ff] to-[#a558ff]"></span>
+
+  <!-- Witte binnenkant -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-[2px] rounded-full
+           bg-linear-to-r from-white to-[#f0f5ff]"></span>
+
+  <span class="relative z-10 flex items-center gap-4 px-7 py-3
+               text-[17px] font-bold">
+    Upgrade <span aria-hidden="true">→</span>
+  </span>
+</button>
+    `,
+      },
+
+      // ==========================================
+      // 06 - UPGRADE (HOVER DESIGN)
+      // ==========================================
+      {
+        id: "gradient-upgrade-hover",
+        title: "Upgrade - Hover",
+        description: "White outline becomes an electric neon gradient.",
+        html: `
+<button type="button"
+  class="group relative isolate inline-flex min-w-[195px] items-center
+         justify-center rounded-full p-[2px] text-white
+         transition-transform duration-300 hover:scale-105
+         active:scale-95 focus-visible:outline-2
+         focus-visible:outline-offset-4 focus-visible:outline-pink-500">
+
+  <!-- Sterke neon glow -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute -inset-2 -z-10 rounded-full
+           bg-linear-to-r from-cyan-400 via-violet-500 to-pink-500
+           opacity-80 blur-xl transition-opacity duration-300
+           group-hover:opacity-100"></span>
+
+  <!-- Lichte rand -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-0 rounded-full
+           bg-linear-to-r from-cyan-200 via-violet-200 to-pink-200"></span>
+
+  <!-- Gekleurde achtergrond -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-[2px] rounded-full
+           bg-linear-to-r from-[#02caff] via-[#3346ff] to-[#ff379f]"></span>
+
+  <!-- Glossy effect -->
+  <span aria-hidden="true"
+    class="pointer-events-none absolute inset-x-4 top-[3px] h-[42%]
+           rounded-full bg-linear-to-b from-white/40 to-transparent"></span>
+
+  <span class="relative z-10 flex items-center gap-4 px-7 py-3
+               text-[17px] font-bold">
+    Upgrade <span aria-hidden="true">→</span>
+  </span>
+</button>
+    `,
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
     ],
   },
 

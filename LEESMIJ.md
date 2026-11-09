@@ -1,21 +1,46 @@
-# Uikit Starter Kits: werkende navigatie
+# Morphing Arrow Button collectie
 
-Dit pakket vervangt **alleen** deze twee routebestanden:
+Zes codevoorbeelden gebaseerd op de afbeelding: Next, Continue en Explore More, telkens Default en Hover.
 
-- `src/app/(library)/starter-kits/page.tsx`: klikbare kaarten, zoekfunctie, filters
-- `src/app/(library)/starter-kits/[slug]/page.tsx`: preview, componentenlijst en code kopiëren
+## Installeren
 
-De bestaande `src/lib/starter-kits.ts` met jouw acht testkits blijft **ongewijzigd**.
+Plaats `src/lib/kits/morphing-arrow-buttons.ts` in je Next.js-project.
 
-Installeer vanuit de projectroot:
+Voeg **bovenaan** `src/lib/starter-kits.ts` toe:
 
-```bash
-mkdir -p 'src/app/(library)/starter-kits/[slug]'
-cp 'src/app/(library)/starter-kits/page.tsx' /tmp/uikit-starter-kits-page-backup.tsx
-unzip -o ~/Downloads/uikit-kits-werkend.zip -d .
-npm run dev
+```ts
+import { morphingArrowButtons } from "./kits/morphing-arrow-buttons";
 ```
 
-Controleer `/starter-kits`, `/starter-kits/buttons`, `/starter-kits/cards`.
+Zoek alleen `slug: "buttons"` en de `examples: [...]` van die kit.
+Voeg **onder je bestaande button-objecten** de volgende regel toe, vóór de sluitende `]`:
 
-Als je een bestaande detailpagina wilt bewaren, maak vooraf zelf een backup daarvan.
+```ts
+...morphingArrowButtons,
+```
+
+Voorbeeld:
+
+```ts
+examples: [
+  { id: "basic-button", title: "Basic Button", description: "...", html: `...` },
+  ...morphingArrowButtons,
+],
+```
+
+Gebruik geen `...morphingArrowButtons` in andere kits, tenzij je ze daar ook wilt tonen.
+
+## Testen
+
+`npm run dev` -> `http://localhost:3000/starter-kits/buttons`
+
+## Eigenschappen
+
+- Eén klikbaar HTML/Tailwind-codeblok per variant, zonder React-dependencies.
+- De default-varianten animeren bij hover (en geven ook keyboard-focus feedback).
+- De hover-varianten tonen de eindtoestand al als statisch voorbeeld.
+- De SVG-pijl zit inline in de HTML, dus er zijn geen externe icon packs nodig.
+- De screenshot is visuele inspiratie; exacte pixels/glow verschillen per browser.
+
+Icon-inspiratie: https://lucide.dev/icons/arrow-right en https://lucide.dev/license.
+Bij hergebruik van de Lucide SVG-assets gelden de betreffende licentievoorwaarden.
