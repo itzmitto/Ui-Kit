@@ -1,0 +1,19 @@
+import Link from "next/link";
+import { ArrowRight, SlidersHorizontal, Sparkles, WandSparkles } from "lucide-react";
+
+export function PlaygroundPromo() {
+return (
+<>
+<section id="how-it-works" className="mx-auto grid max-w-[1440px] scroll-mt-28 gap-10 px-5 py-24 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center xl:px-12">
+          <div><span className="inline-flex items-center gap-2 rounded-full bg-[#e9f7ef] px-4 py-2 text-xs font-bold text-[#168355]"><WandSparkles size={15} /> YOUR WORKSPACE</span><h2 className="mt-6 text-3xl font-extrabold leading-tight tracking-[-0.055em] sm:text-4xl">A place to test, tweak and share your work.</h2><p className="mt-5 max-w-lg leading-7 text-[#627089]">The playground is where your components will come to life. The layout is ready; you decide what goes inside.</p><Link href="/playground" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#1552f6] px-5 py-3 text-sm font-bold text-white hover:bg-[#0b3ed2]">Open playground <ArrowRight size={17} /></Link></div>
+          <div className="grid gap-3 sm:grid-cols-[1fr_0.9fr]">
+            <div className="rounded-[22px] border border-[#e2e8f0] bg-[#f6f9ff] p-5"><div className="mb-5 flex items-center justify-between"><span className="text-xs font-extrabold">Live preview</span><span className="rounded-full bg-[#dbf7e7] px-2.5 py-1 text-[10px] font-bold text-[#08764a]">Layout ready</span></div><div className="grid min-h-44 place-items-center rounded-xl border border-dashed border-[#b9cbe5] bg-white/75 text-center"><div><div className="mx-auto grid size-12 place-items-center rounded-xl bg-[#eaf0ff] text-[#1552f6]"><Sparkles size={24} /></div><p className="mt-3 text-sm font-bold">Your component goes here</p><p className="mt-1 text-xs text-[#75839a]">An empty canvas for your ideas</p></div></div></div>
+            <div className="rounded-[22px] border border-[#e2e8f0] bg-white p-5"><div className="mb-5 flex items-center gap-2 text-xs font-extrabold"><SlidersHorizontal size={16} className="text-[#1552f6]" /> Customize</div><div className="space-y-5"><div><div className="mb-2 flex justify-between text-xs"><span>Spacing</span><span className="text-[#708099]">24 px</span></div><div className="h-1.5 rounded-full bg-[#e6ebf3]"><div className="h-1.5 w-[60%] rounded-full bg-[#1552f6]" /></div></div><div><div className="mb-2 flex justify-between text-xs"><span>Radius</span><span className="text-[#708099]">12 px</span></div><div className="h-1.5 rounded-full bg-[#e6ebf3]"><div className="h-1.5 w-[45%] rounded-full bg-[#1552f6]" /></div></div><div><div className="mb-2 text-xs">Colors</div><div className="flex gap-2"><span className="size-7 rounded-full bg-[#1552f6]" /><span className="size-7 rounded-full bg-[#9ceec2]" /><span className="size-7 rounded-full bg-[#ffb462]" /><span className="size-7 rounded-full bg-[#1e2a3f]" /></div></div></div></div>
+          </div>
+        </section>
+<section className="mx-auto max-w-[1440px] px-5 pb-20 sm:px-8 xl:px-12">
+          <div className="relative overflow-hidden rounded-[28px] bg-[#1552f6] px-8 py-12 text-white sm:px-12 lg:flex lg:items-center lg:justify-between lg:gap-6"><div className="absolute -right-16 -top-24 size-80 rounded-full border-[44px] border-white/10" aria-hidden="true" /><div className="relative"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c5d5ff]">YOUR LIBRARY STARTS HERE</p><h2 className="mt-3 max-w-xl text-3xl font-extrabold tracking-[-0.05em] sm:text-4xl">Make something worth sharing.</h2><p className="mt-3 text-sm leading-6 text-[#dce6ff]">Browse the layouts. Build the components. Make it yours.</p></div><Link href="/components" className="relative mt-7 inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-extrabold text-[#1552f6] hover:bg-[#edf3ff] lg:mt-0">Explore components <ArrowRight size={17} /></Link></div>
+        </section>
+</>
+);
+}
