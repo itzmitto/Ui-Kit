@@ -1,20 +1,19 @@
-/*
- * UI-KIT COMPONENT LIBRARY
+/**
+ * UI-KIT: HTML + TAILWIND STARTER KITS
  *
- * In dit bestand bewaar je al je eigen UI Starter Kits.
+ * Elke kit heeft precies één testvoorbeeld.
+ * Jij kunt later zelf extra voorbeelden ontwerpen en toevoegen.
+ * De HTML en Tailwind CSS staan samen in het veld `html`.
  *
- * Elke kit heeft:
- * - Een unieke slug (URL)
- * - Een titel
- * - Een beschrijving
- * - Een categorie en accentkleur
- * - Een lijst met zelfgemaakte componenten
+ * EEN TWEEDE COMPONENT TOEVOEGEN:
+ * 1. Zoek de juiste kit via `slug`, bijvoorbeeld `buttons`.
+ * 2. Kopieer het object binnen `examples: [ ... ]`.
+ * 3. Plak de kopie eronder, met een komma ertussen.
+ * 4. Geef de kopie een unieke `id`, pas de titel aan en wijzig de HTML.
  *
- * Je schrijft gewone HTML met Tailwind CSS classes.
- * Je hoeft hier dus GEEN React-componenten te maken.
+ * LET OP: schrijf hier HTML met `class`, niet JSX met `className`.
  */
 
-// STAP 1: De structuur van één component.
 export type KitExample = {
   id: string;
   title: string;
@@ -22,7 +21,6 @@ export type KitExample = {
   html: string;
 };
 
-// STAP 2: De structuur van een complete Starter Kit.
 export type StarterKit = {
   slug: string;
   title: string;
@@ -33,203 +31,246 @@ export type StarterKit = {
   examples: KitExample[];
 };
 
-// STAP 3: Hier staan alle Starter Kits.
 export const starterKits: StarterKit[] = [
-  // ============================================
-  // KIT 1: BUTTONS (VOORBEELD)
-  // ============================================
-
+  // KIT 1: BUTTONS
   {
-    // De URL wordt /starter-kits/buttons
     slug: "buttons",
-
-    // De naam die bezoekers zien.
     title: "Buttons Kit",
-
-    // Korte uitleg over deze kit.
-    description: "Beautiful buttons made with HTML and Tailwind CSS.",
-
+    description: "Buttons with different colors, states and animations.",
     category: "Components",
     accent: "blue",
     tags: ["Buttons", "Tailwind", "UI"],
-
-    // Hier komen alle buttons van deze kit.
     examples: [
       {
-        // Iedere button moet een unieke ID hebben.
-        id: "blue-button",
-
-        // Naam van de button.
-        title: "Blue Button",
-
-        // Beschrijving van de button.
-        description: "A blue button with hover and click animations.",
-
-        /*
-         * HIER SCHRIJF JE JOUW EIGEN HTML.
-         *
-         * Tailwind CSS staat direct in class="...".
-         *
-         * Bijvoorbeeld:
-         * bg-blue-600       = blauwe achtergrond
-         * px-6 py-3        = ruimte binnen de button
-         * rounded-xl       = afgeronde hoeken
-         * hover:bg-blue-700 = donkerblauw bij hover
-         * hover:scale-105   = iets groter bij hover
-         * active:scale-95   = kleiner bij klikken
-         */
-
+        id: "basic-blue-button",
+        title: "Basic Blue Button",
+        description: "A simple button with a hover effect.",
         html: `
 <button
   type="button"
-  class="inline-flex items-center justify-center
-         rounded-xl bg-blue-600 px-6 py-3
-         font-semibold text-white
-         shadow-lg shadow-blue-600/20
-         transition-all duration-200
-         hover:scale-105 hover:bg-blue-700
-         active:scale-95
-         focus-visible:outline-2
-         focus-visible:outline-offset-2
-         focus-visible:outline-blue-600"
+  class="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
 >
   Get Started
-</button>
-        `,
+</button>`,
       },
-
-      /*
-       * ZELF EEN TWEEDE BUTTON MAKEN?
-       *
-       * 1. Kopieer het hele object hierboven.
-       * 2. Plak het hieronder, binnen examples: [].
-       * 3. Geef de nieuwe button een andere id.
-       * 4. Verander title en description.
-       * 5. Schrijf je eigen HTML in html: `...`.
-       *
-       * Vergeet de komma tussen de objecten niet!
-       */
+      // TODO: Maak hier jouw tweede button. Kopieer het object hierboven.
     ],
   },
 
-  // ============================================
-  // KIT 2: CARDS (DEZE MAAK JIJ ZELF)
-  // ============================================
-
+  // KIT 2: CARDS
   {
-    // Gebruik een unieke slug.
-    // Deze bepaalt de URL van je kit.
     slug: "cards",
-
     title: "Cards Kit",
-
-    description: "Custom cards made with HTML and Tailwind CSS.",
-
+    description: "Reusable content, profile and product cards.",
     category: "Components",
-
     accent: "mint",
-
     tags: ["Cards", "Tailwind"],
-
-    /*
-     * HIER GA JIJ JE EERSTE CARD MAKEN.
-     *
-     * Hoe doe je dat?
-     *
-     * 1. Maak van [] een array met een object: [{ ... }]
-     * 2. Voeg een unieke id toe.
-     * 3. Voeg een title toe.
-     * 4. Voeg een description toe.
-     * 5. Voeg html: `...` toe.
-     * 6. Schrijf daarin jouw eigen HTML met Tailwind.
-     *
-     * Kijk naar de Buttons Kit hierboven
-     * om te zien hoe een volledig voorbeeld werkt.
-     *
-     * Begin bijvoorbeeld met:
-     * - Een div als buitenste container
-     * - Een h3 voor de titel
-     * - Een p voor de beschrijving
-     *
-     * Handige Tailwind classes:
-     * rounded-2xl = afgeronde hoeken
-     * bg-white     = witte achtergrond
-     * border       = rand
-     * p-6          = binnenruimte
-     * shadow-lg    = schaduw
-     */
-
-    examples: [],
+    examples: [
+      {
+        id: "simple-info-card",
+        title: "Simple Info Card",
+        description: "A card with a heading, text and a link.",
+        html: `
+<article class="max-w-sm rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+  <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-lg text-emerald-700">✦</div>
+  <h3 class="text-xl font-bold text-slate-900">Your next project</h3>
+  <p class="mt-2 text-sm leading-6 text-slate-600">Build something useful with a simple and reusable card.</p>
+  <a href="#more" class="mt-5 inline-block text-sm font-semibold text-blue-600 hover:underline">Learn more &rarr;</a>
+</article>`,
+      },
+      // TODO: Maak zelf een tweede card, bijvoorbeeld een productkaart.
+    ],
   },
 
-  // ============================================
-  // OVERIGE KITS (NOG LEEG)
-  // ============================================
-
+  // KIT 3: FORMS
   {
     slug: "forms",
     title: "Forms Kit",
-    description: "Inputs, checkboxes and forms.",
+    description: "Form fields, checkboxes and input layouts.",
     category: "Components",
     accent: "peach",
     tags: ["Forms", "Inputs"],
-    examples: [],
+    examples: [
+      {
+        id: "simple-contact-form",
+        title: "Simple Contact Form",
+        description: "A form layout with name, email and message fields.",
+        html: `
+<form class="w-full max-w-md space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" onsubmit="event.preventDefault()">
+  <h3 class="text-xl font-bold text-slate-900">Contact us</h3>
+  <div>
+    <label for="contact-name" class="mb-1 block text-sm font-medium text-slate-700">Name</label>
+    <input id="contact-name" name="name" type="text" placeholder="Your name" class="w-full rounded-lg border border-slate-300 px-3 py-2.5 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" />
+  </div>
+  <div>
+    <label for="contact-email" class="mb-1 block text-sm font-medium text-slate-700">Email</label>
+    <input id="contact-email" name="email" type="email" placeholder="you@example.com" class="w-full rounded-lg border border-slate-300 px-3 py-2.5 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" />
+  </div>
+  <button type="submit" class="w-full rounded-lg bg-blue-600 px-4 py-2.5 font-semibold text-white hover:bg-blue-700">Send message</button>
+</form>`,
+      },
+      // TODO: Maak zelf een formulier met checkbox, select of radio.
+    ],
   },
 
+  // KIT 4: NAVIGATION
   {
     slug: "navigation",
     title: "Navigation Kit",
-    description: "Navbars, menus and tabs.",
+    description: "Navigation bars, menus and tabs.",
     category: "Components",
     accent: "yellow",
     tags: ["Navigation", "Menus"],
-    examples: [],
+    examples: [
+      {
+        id: "simple-navbar",
+        title: "Simple Navbar",
+        description: "A compact horizontal navigation bar.",
+        html: `
+<nav aria-label="Main navigation" class="flex w-full max-w-2xl flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
+  <a href="#home" class="text-lg font-extrabold tracking-tight text-slate-900">Brand.</a>
+  <div class="flex items-center gap-4 text-sm font-medium text-slate-600">
+    <a href="#home" class="hover:text-blue-600">Home</a>
+    <a href="#features" class="hover:text-blue-600">Features</a>
+    <a href="#contact" class="hover:text-blue-600">Contact</a>
+  </div>
+</nav>`,
+      },
+      // TODO: Maak zelf een navigatie met dropdown of mobiele menuvariant.
+    ],
   },
 
+  // KIT 5: DASHBOARD
   {
     slug: "dashboard",
     title: "Dashboard Starter",
-    description: "Dashboard layouts and interfaces.",
+    description: "Dashboard layouts and small admin interfaces.",
     category: "Templates",
     accent: "blue",
     tags: ["Dashboard", "Admin"],
-    examples: [],
+    examples: [
+      {
+        id: "dashboard-stats",
+        title: "Dashboard Stats",
+        description: "A responsive dashboard heading with two stat cards.",
+        html: `
+<section class="w-full max-w-2xl rounded-2xl border border-slate-200 bg-slate-50 p-6">
+  <div class="mb-5 flex flex-wrap items-center justify-between gap-2">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-wider text-blue-600">Overview</p>
+      <h2 class="mt-1 text-2xl font-extrabold text-slate-900">Dashboard</h2>
+    </div>
+    <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">All systems active</span>
+  </div>
+  <div class="grid gap-3 sm:grid-cols-2">
+    <article class="rounded-xl border border-slate-200 bg-white p-5">
+      <p class="text-sm text-slate-500">Total users</p>
+      <p class="mt-2 text-3xl font-bold text-slate-900">1,284</p>
+    </article>
+    <article class="rounded-xl border border-slate-200 bg-white p-5">
+      <p class="text-sm text-slate-500">Active projects</p>
+      <p class="mt-2 text-3xl font-bold text-slate-900">48</p>
+    </article>
+  </div>
+</section>`,
+      },
+      // TODO: Maak zelf een dashboard met tabel, sidebar of grafiek.
+    ],
   },
 
+  // KIT 6: LANDING PAGE
   {
     slug: "landing-page",
     title: "Landing Page Starter",
-    description: "Website layouts and sections.",
+    description: "Landing page sections and website layouts.",
     category: "Templates",
     accent: "mint",
     tags: ["Landing", "Website"],
-    examples: [],
+    examples: [
+      {
+        id: "simple-hero",
+        title: "Simple Hero Section",
+        description: "A headline, short description and call-to-action.",
+        html: `
+<section class="w-full max-w-3xl rounded-3xl bg-blue-50 px-6 py-12 text-center sm:px-12">
+  <span class="inline-block rounded-full bg-white px-4 py-2 text-xs font-bold text-blue-700">Your next idea starts here</span>
+  <h1 class="mx-auto mt-5 max-w-xl text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">Build something amazing.</h1>
+  <p class="mx-auto mt-4 max-w-md text-slate-600">A clean starting point for your next website or product.</p>
+  <a href="#start" class="mt-7 inline-block rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700">Get started</a>
+</section>`,
+      },
+      // TODO: Maak zelf een hero met afbeelding, features of testimonials.
+    ],
   },
 
+  // KIT 7: AUTHENTICATION
   {
     slug: "authentication",
     title: "Authentication Kit",
-    description: "Login and registration interfaces.",
+    description: "Login and registration screen layouts.",
     category: "Components",
     accent: "peach",
     tags: ["Login", "Authentication"],
-    examples: [],
+    examples: [
+      {
+        id: "simple-login",
+        title: "Simple Login Card",
+        description: "A basic login form layout (no real authentication).",
+        html: `
+<form class="w-full max-w-sm space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" onsubmit="event.preventDefault()">
+  <h2 class="text-2xl font-bold text-slate-900">Welcome back</h2>
+  <p class="text-sm text-slate-500">Log in to your account.</p>
+  <div>
+    <label for="login-email" class="mb-1 block text-sm font-medium text-slate-700">Email</label>
+    <input id="login-email" type="email" autocomplete="email" placeholder="you@example.com" class="w-full rounded-lg border border-slate-300 px-3 py-2.5 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100" />
+  </div>
+  <div>
+    <label for="login-password" class="mb-1 block text-sm font-medium text-slate-700">Password</label>
+    <input id="login-password" type="password" autocomplete="current-password" placeholder="Your password" class="w-full rounded-lg border border-slate-300 px-3 py-2.5 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100" />
+  </div>
+  <button type="submit" class="w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700">Log in</button>
+</form>`,
+      },
+      // TODO: Maak zelf een register-, password-reset- of 2FA-layout.
+    ],
   },
 
+  // KIT 8: PRICING
   {
     slug: "pricing",
     title: "Pricing Kit",
-    description: "Pricing tables and subscription cards.",
+    description: "Subscription cards and pricing layouts.",
     category: "Components",
     accent: "yellow",
     tags: ["Pricing", "SaaS"],
-    examples: [],
+    examples: [
+      {
+        id: "simple-pricing-card",
+        title: "Simple Pricing Card",
+        description: "A pricing card with features and a call-to-action.",
+        html: `
+<article class="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+  <p class="text-sm font-bold text-blue-600">Starter Plan</p>
+  <div class="mt-3 flex items-baseline gap-1">
+    <strong class="text-4xl font-black text-slate-900">€9</strong>
+    <span class="text-sm text-slate-500">/ month</span>
+  </div>
+  <p class="mt-3 text-sm text-slate-600">Everything you need for a small project.</p>
+  <ul class="mt-5 space-y-2 text-sm text-slate-700">
+    <li>✓ Reusable components</li>
+    <li>✓ Responsive layouts</li>
+    <li>✓ Easy to customize</li>
+  </ul>
+  <a href="#choose-plan" class="mt-6 block rounded-xl bg-blue-600 px-5 py-3 text-center font-semibold text-white hover:bg-blue-700">Choose plan</a>
+</article>`,
+      },
+      // TODO: Maak zelf een prijsvergelijking met 2 of 3 abonnementen.
+    ],
   },
 ];
 
-// STAP 4: Zoek een Starter Kit op basis van de slug.
-// De detailpagina gebruikt deze functie automatisch.
-// Deze functie hoef je normaal niet aan te passen.
+// De detailpagina zoekt met deze functie de kit op basis van de URL.
+// Hier hoef je niets aan te veranderen wanneer je nieuwe voorbeelden toevoegt.
 export function getStarterKit(slug: string): StarterKit | undefined {
   return starterKits.find((kit) => kit.slug === slug);
 }
