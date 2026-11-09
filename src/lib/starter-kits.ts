@@ -69,13 +69,12 @@ export const starterKits: StarterKit[] = [
   html: `
     <button
       type="button"
-      class="rounded-2xl bg-emerald-500 px-8 py-4
-             font-bold text-white shadow-lg
+      class="rounded-2xl bg-red-500 px-8 py-4
+            text-white 
              transition-all duration-300
-             hover:-translate-y-1 hover:bg-emerald-600
-             active:scale-95"
+             hover:-translate-y-1 hover:bg-red-700"
     >
-      My Button
+      My first button
     </button>
   `,
 },
