@@ -1,0 +1,23 @@
+/* Het raster is onderdeel van het LAB, niet van een UI-component. */
+.canvas {
+  background-color: #fbfcff;
+  background-image:
+    linear-gradient(#dfe7f240 1px, transparent 1px),
+    linear-gradient(90deg, #dfe7f240 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.previewSurface {
+  width: 100%;
+  margin-inline: auto;
+  border: 1px solid #e1e7f0;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 16px 42px #1b3c7620;
+  transition: width 250ms ease;
+}
+
+.codeScroll {
+  scrollbar-width: thin;
+  scrollbar-color: #6f85a6 #192840;
+}

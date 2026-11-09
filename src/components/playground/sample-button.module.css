@@ -1,0 +1,30 @@
+/* De styles van alleen onze testbutton: geen invloed op andere UI-kits. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 100%;
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: background-color 160ms, transform 160ms, box-shadow 160ms;
+}
+
+.button:hover:not(:disabled) { transform: translateY(-2px); }
+.button:active:not(:disabled) { transform: translateY(0); }
+.button:focus-visible { outline: 3px solid #93bcff; outline-offset: 3px; }
+.button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.sm { min-height: 36px; padding: 0.5rem 0.9rem; font-size: 0.8rem; }
+.md { min-height: 44px; padding: 0.7rem 1.2rem; font-size: 0.9rem; }
+.lg { min-height: 54px; padding: 0.9rem 1.6rem; font-size: 1rem; }
+
+.primary { background: #1546ff; color: #fff; box-shadow: 0 8px 20px #1546ff25; }
+.primary:hover:not(:disabled) { background: #0035da; }
+.secondary { background: #b5f5d4; color: #085e42; }
+.secondary:hover:not(:disabled) { background: #89eabb; }
+.outline { background: #fff; color: #1546ff; border-color: #1546ff; }
+.outline:hover:not(:disabled) { background: #eef4ff; }
