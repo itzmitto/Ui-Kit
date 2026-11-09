@@ -54,6 +54,32 @@ export const starterKits: StarterKit[] = [
 </button>`,
       },
       // TODO: Maak hier jouw tweede button. Kopieer het object hierboven.
+
+{
+  // Unieke naam voor je button.
+  id: "my-custom-button",
+
+  // Naam op de website.
+  title: "My Custom Button",
+
+  // Korte beschrijving.
+  description: "My first custom Tailwind button.",
+
+  // Hier schrijf je zelf HTML en Tailwind CSS.
+  html: `
+    <button
+      type="button"
+      class="rounded-2xl bg-emerald-500 px-8 py-4
+             font-bold text-white shadow-lg
+             transition-all duration-300
+             hover:-translate-y-1 hover:bg-emerald-600
+             active:scale-95"
+    >
+      My Button
+    </button>
+  `,
+},
+
     ],
   },
 
